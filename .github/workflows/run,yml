@@ -1,0 +1,19 @@
+name: "Run"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/dotnet/sdk:latest
+    steps: 
+
+      - name: "Checkout"
+        uses: actions/checkout@v3
+
+      - name: "Run"
+        run : |
+          dotnet run 
+          
